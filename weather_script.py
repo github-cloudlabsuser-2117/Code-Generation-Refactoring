@@ -1,7 +1,7 @@
 import requests
 
 def obtener_clima(ciudad, api_key):
-    url = f"https://api.openweathermap.org/data/3.0/onecall/timemachine?lat=39.099724&lon=-94.578331&dt=1643803200&appid={api_key}"
+    url = f"http://api.openweathermap.org/data/2.5/weather?q={ciudad}&appid={api_key}&units=metric&lang=es"
     respuesta = requests.get(url)
     if respuesta.status_code == 200:
         datos = respuesta.json()
